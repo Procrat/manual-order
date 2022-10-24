@@ -1,0 +1,24 @@
+{
+  "name": "manual-sort",
+  "version": "0.0.1",
+  "description": "Sort a list by hand, yay!",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "test": "vitest"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/underscore": "^1.11.4",
+    "typescript": "^4.8.2",
+    "vite": "^3.0.9",
+    "vite-plugin-solid": "^2.3.0",
+    "vitest": "^0.24.3"
+  },
+  "dependencies": {
+    "@solid-devtools/overlay": "^0.0.7",
+    "solid-js": "^1.5.1",
+    "underscore": "^1.13.6"
+  }
+}
