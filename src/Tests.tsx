@@ -2,12 +2,12 @@ import type { Component } from 'solid-js';
 import { createSignal, Switch, Match } from 'solid-js';
 import _ from 'underscore';
 
-import StepwiseHeapsort, {
+import StepwiseSort, {
   SortState,
   SortStateKind,
   ComparisonNeeded,
   Sorted
-} from './stepwise-heapsort';
+} from './stepwise-sort';
 
 import css from './Tests.module.css';
 
@@ -21,7 +21,7 @@ type Props = {
 
 function useStepwiseSort(
   props: Props,
-  sort: StepwiseHeapsort<string>,
+  sort: StepwiseSort<string>,
   firstComparison: [string, string]
 ): [
   () => [string, string],
@@ -45,7 +45,7 @@ function useStepwiseSort(
 
 
 const Tests: Component<Props> = (props) => {
-  const sort = new StepwiseHeapsort<string>(_.shuffle(props.choices));
+  const sort = new StepwiseSort<string>(_.shuffle(props.choices));
 
   return (
     <Switch>

@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 
-import StepwiseHeapsort, { SortStateKind } from '../src/stepwise-heapsort';
+import StepwiseSort, { SortStateKind } from '../src/stepwise-sort';
 
 type InteractionResult<T> = {
   sortedList: T[];
@@ -8,7 +8,7 @@ type InteractionResult<T> = {
 };
 
 function interact<T>(unsortedList: T[]): InteractionResult<T> {
-  const sort = new StepwiseHeapsort(unsortedList);
+  const sort = new StepwiseSort(unsortedList);
   const comparisons = [];
   while (true) {
     const state = sort.next();
@@ -35,7 +35,7 @@ function interact<T>(unsortedList: T[]): InteractionResult<T> {
   }
 }
 
-describe.concurrent('stepwise-heapsort', () => {
+describe.concurrent('stepwise-sort', () => {
   test.concurrent('should leave empty list intact', () => {
     const { sortedList, comparisons } = interact([]);
     expect(sortedList).toEqual([]);
